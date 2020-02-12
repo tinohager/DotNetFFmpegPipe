@@ -38,7 +38,6 @@ namespace DotNetFFmpegPipe.SimplePipe1
                     UseShellExecute = false,
                     CreateNoWindow = true,
                     RedirectStandardInput = true,
-                    RedirectStandardOutput = true,
                     RedirectStandardError = true,
                 },
             };
@@ -50,17 +49,16 @@ namespace DotNetFFmpegPipe.SimplePipe1
             var ffmpegIn = process.StandardInput.BaseStream;
 
             using (var image = new Bitmap(1920, 1080))
-            using (var pen = new Pen(Brushes.White, 5))
             using (var canvas = Graphics.FromImage(image))
             {
                 for (var i = 0; i < frameCount; i++)
                 {
-                    var percent = 100.0 * i / frameCount;
+                    var percent = (double)i / frameCount;
 
-                    var backgroundColor = Color.Yellow.Interpolate(Color.Green, i / percent);
+                    var backgroundColor = Color.Yellow.Interpolate(Color.Green, percent);
                     canvas.Clear(backgroundColor);
 
-                    canvas.DrawPie(pen, i * 3, 50, 50, 50, 0, 360);
+                    canvas.FillPie(Brushes.White, i, 50, 50, 50, 0, 360);
                     canvas.Flush();
 
                     // Draw your image
@@ -68,9 +66,10 @@ namespace DotNetFFmpegPipe.SimplePipe1
 
                     // Write Data
                     ffmpegIn.Write(imageData, 0, imageData.Length);
-                    //Console.WriteLine($"Pipe image {i}");
                 }
             }
+
+            Console.WriteLine("Drawing done");
 
             ffmpegIn.Flush();
             ffmpegIn.Close();
