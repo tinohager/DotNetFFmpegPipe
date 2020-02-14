@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetFFmpegPipe.Common", "DotNetFFmpegPipe.Common\DotNetFFmpegPipe.Common.csproj", "{D0C4D5BE-02C3-48FF-B2CF-D449C2CEE004}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetFFmpegPipe.Common", "DotNetFFmpegPipe.Common\DotNetFFmpegPipe.Common.csproj", "{D0C4D5BE-02C3-48FF-B2CF-D449C2CEE004}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetFFmpegPipe.SimplePipe1", "DotNetFFmpegPipe.SimplePipe1\DotNetFFmpegPipe.SimplePipe1.csproj", "{8B95EC5D-C581-4488-91A4-C320AD321B68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetFFmpegPipe.SimplePipe1", "DotNetFFmpegPipe.SimplePipe1\DotNetFFmpegPipe.SimplePipe1.csproj", "{8B95EC5D-C581-4488-91A4-C320AD321B68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetFFmpegPipe.SimplePipe2", "DotNetFFmpegPipe.SimplePipe2\DotNetFFmpegPipe.SimplePipe2.csproj", "{B06613D8-3264-4630-8485-F88986C3CE1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{8B95EC5D-C581-4488-91A4-C320AD321B68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B95EC5D-C581-4488-91A4-C320AD321B68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B95EC5D-C581-4488-91A4-C320AD321B68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B06613D8-3264-4630-8485-F88986C3CE1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B06613D8-3264-4630-8485-F88986C3CE1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B06613D8-3264-4630-8485-F88986C3CE1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B06613D8-3264-4630-8485-F88986C3CE1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

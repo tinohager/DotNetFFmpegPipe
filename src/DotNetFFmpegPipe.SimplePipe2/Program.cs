@@ -5,12 +5,12 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 
-namespace DotNetFFmpegPipe.SimplePipe1
+namespace DotNetFFmpegPipe.SimplePipe2
 {
     class Program
     {
         /// <summary>
-        /// Create a video with a color fade and a moving circle from images
+        /// Overlay an existing Video with transparent pngs
         /// </summary>
         static void Main()
         {
@@ -21,7 +21,7 @@ namespace DotNetFFmpegPipe.SimplePipe1
                 File.Copy(@"C:\Temp\ffmpeg.exe", Path.Combine(currentDirectory, ffmpeg));
             }
 
-            var fps = 20;
+            var fps = 10;
             var duration = 60;
             var frameCount = fps * duration;
 
@@ -29,8 +29,10 @@ namespace DotNetFFmpegPipe.SimplePipe1
             var sw = new Stopwatch();
             sw.Start();
 
-            var inputArgs = $"-y -framerate {fps} -f image2pipe -i -";
-            var outputArgs = "-vcodec libx264 -crf 23 -pix_fmt yuv420p -preset ultrafast -r 20 out.mp4";
+            //The performance is much better if it is not a full overlay
+
+            var inputArgs = $"-y -i myvideo.mp4 -framerate 10 -i -";
+            var outputArgs = "-filter_complex \"[0:0][1:0]overlay=0:120[out]\" -map [out] -vcodec libx264 -crf 23 -pix_fmt yuv420p -preset ultrafast -movflags +faststart -r 20 out.mp4";
 
             var process = new Process
             {
@@ -51,17 +53,17 @@ namespace DotNetFFmpegPipe.SimplePipe1
 
             var ffmpegIn = process.StandardInput.BaseStream;
 
-            using (var image = new Bitmap(1920, 1080))
+            using (var image = new Bitmap(1920, 50))
             using (var canvas = Graphics.FromImage(image))
             {
                 for (var i = 0; i < frameCount; i++)
                 {
                     var percent = (double)i / frameCount;
 
-                    var backgroundColor = Color.Yellow.Interpolate(Color.Green, percent);
+                    var backgroundColor = Color.Transparent;
                     canvas.Clear(backgroundColor);
 
-                    canvas.FillPie(Brushes.White, i, 50, 50, 50, 0, 360);
+                    canvas.FillRectangle(Brushes.White, i, 0, 50, 50);
                     canvas.Flush();
 
                     // Draw your image
