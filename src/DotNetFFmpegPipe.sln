@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetFFmpegPipe.SimplePipe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetFFmpegPipe.SimplePipe2", "DotNetFFmpegPipe.SimplePipe2\DotNetFFmpegPipe.SimplePipe2.csproj", "{B06613D8-3264-4630-8485-F88986C3CE1E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetFFmpegPipe.SimplePipe3", "DotNetFFmpegPipe.SimplePipe3\DotNetFFmpegPipe.SimplePipe3.csproj", "{0A20D7C3-1FC8-4292-8C7E-480DE122F2ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B06613D8-3264-4630-8485-F88986C3CE1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B06613D8-3264-4630-8485-F88986C3CE1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B06613D8-3264-4630-8485-F88986C3CE1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A20D7C3-1FC8-4292-8C7E-480DE122F2ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A20D7C3-1FC8-4292-8C7E-480DE122F2ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A20D7C3-1FC8-4292-8C7E-480DE122F2ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A20D7C3-1FC8-4292-8C7E-480DE122F2ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
